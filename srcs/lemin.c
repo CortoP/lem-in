@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 10:58:02 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/04 11:59:34 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/06 16:27:40 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 int			main(void)
 {
 	ft_parser();
+	ft_get_rooms_struct();
 	return (0);
 }

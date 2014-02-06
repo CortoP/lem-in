@@ -6,7 +6,7 @@
 #    By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/01/14 14:36:46 by vlehuger          #+#    #+#              #
-#    Updated: 2014/02/04 16:13:48 by vlehuger         ###   ########.fr        #
+#    Updated: 2014/02/06 16:37:27 by vlehuger         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -19,6 +19,7 @@ NAME =		lemin
 SRCS =		\
 			srcs/lemin.c \
 			srcs/ft_create_rooms.c \
+			srcs/ft_get_rooms_struct.c \
 			srcs/ft_init_lm.c \
 			srcs/ft_lemin_parser.c \
 
