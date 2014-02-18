@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 10:58:02 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/06 16:27:40 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/18 15:05:08 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,60 @@
 
 int			main(void)
 {
-	ft_parser();
-	ft_get_rooms_struct();
+	t_lm	*params;
+	t_room	*rooms;
+	t_tube	*tubes;
+
+	params = ft_parser();
+	rooms = ft_get_rooms_struct(params->rooms);
+	tubes = ft_get_struct_tubes(params->tubes, rooms);
+	rooms = ft_add_connect(rooms, tubes);
+	rooms = ft_weighting(rooms);
+	ft_solve(rooms, params->ant_nb);
 	return (0);
 }
+
+/*		PUT THE ROOMS
+
+	while (rooms)
+	{
+		ft_putnbr(rooms->id);
+		ft_putchar('\n');
+		printf("%d\n", rooms->dist); 
+		ft_putnbr(rooms->flag);
+		ft_putchar('\n');
+		ft_putendl(rooms->name);
+		rooms = rooms->next;
+	}
+*/
+
+/*		PUT THE TUBES
+	while (tubes)
+	{
+		printf("%d\n%d\n\n", tubes->room1, tubes->room2);
+		tubes = tubes->next;
+	}
+
+*/
+
+/*		PUT THE CONNECTIONS
+	while (rooms)
+	{
+		printf("%s: ", rooms->name);
+		while (rooms->connex)
+		{
+			printf("%s ", rooms->connex->name);
+			rooms->connex = rooms->connex->next;
+		}
+		printf("\n");
+		rooms = rooms->next;
+	}
+*/
+
+/*		PUT THE WEIGHT
+	while (rooms)
+	{
+		printf("%s  => %d\n", rooms->name, *rooms->dist);
+		rooms = rooms->next;
+	}
+*/

@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 10:33:52 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/06 16:28:13 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/07 12:37:38 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ static t_list	*ft_get_tubes(char *first)
 	char		*str;
 
 	tubes = ft_lstnew((char *)first, ft_strlen(first));
-	ft_putendl(tubes->content);
 	while (get_next_line(0, &str) > 0)
 	{
 		if (ft_test_room(str) != 0)
