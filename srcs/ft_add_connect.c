@@ -63,7 +63,7 @@ t_room			*ft_test_tube(int test_id, int connect_id, t_room *rooms)
 	while (rooms)
 	{
 		if (rooms->id == test_id)
-			rooms->connex = ft_connect_room(rooms->connex, tmp, connect_id);
+		    *rooms->connex = ft_connect_room(*rooms->connex, tmp, connect_id);
 		rooms = rooms->next;
 	}
 	return (tmp);

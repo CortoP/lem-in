@@ -77,7 +77,8 @@ t_room				*ft_create_room(int flag, char *name)
 		room->name = ft_strdup(ft_get_first_word(name));
 		room->ant = (int *)malloc(sizeof(int));
 		*room->ant = 0;
-		room->connex = NULL;
+		room->connex = (t_room **)malloc(sizeof(t_room *));
+		*room->connex = NULL;
 		room->next = NULL;
 		id++;
 		return (room);

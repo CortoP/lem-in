@@ -14,15 +14,19 @@
 
 void			ft_room_weighting(t_room *room, int dist)
 {
-	while (room->connex)
+  t_room		*tmp;
+
+	tmp = *room->connex;
+	while (*room->connex)
 	{
-		if (*room->connex->dist > dist || *room->connex->dist == -1)
+	  if (*(*room->connex)->dist > dist || *(*room->connex)->dist == -1)
 		{
-			*room->connex->dist = dist + 1;
-			ft_room_weighting(room->connex, dist + 1);;
+		  *(*room->connex)->dist = dist + 1;
+			ft_room_weighting(*room->connex, dist + 1);;
 		}
-		room->connex = room->connex->next;
+	  *room->connex = (*room->connex)->next;
 	}
+	*room->connex = tmp;
 }
 
 t_room			*ft_weighting(t_room *rooms)

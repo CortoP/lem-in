@@ -14,17 +14,17 @@
 
 void			ft_move_ants(t_room *room)
 {
-	t_room		*tmp;
+	t_room		**tmp;
 
 	tmp = room->connex;
 	while (room->connex && *room->ant > 0)
 	{
-		if ((*room->connex->ant == 0 || room->connex->flag == END) && *room->dist > *room->connex->dist)
+	  if (*(*room->connex)->ant == 0 || (*room->connex)->flag == END) && *room->dist > *(*room->connex)->dist)
 		{
 			*room->ant = *room->ant - 1;
-			*room->connex->ant = *room->connex->ant + 1;
+			*(*room->connex)->ant = *(*room->connex)->ant + 1;
 		}
-		room->connex = room->connex->next;
+		*room->connex = (*room->connex)->next;
 	}
 	room->connex = tmp;
 }

@@ -42,7 +42,7 @@ typedef struct		s_room
 	int				*dist;
 	int				flag;
 	char			*name;
-	struct s_room	*connex;
+	struct s_room	**connex;
 	struct s_room	*next;
 }					t_room;
 

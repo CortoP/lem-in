@@ -21,9 +21,45 @@ int			main(void)
 	params = ft_parser();
 	rooms = ft_get_rooms_struct(params->rooms);
 	tubes = ft_get_struct_tubes(params->tubes, rooms);
-	rooms = ft_add_connect(rooms, tubes);
-	rooms = ft_weighting(rooms);
-	ft_solve(rooms, params->ant_nb);
+      	rooms = ft_add_connect(rooms, tubes);
+       	rooms = ft_weighting(rooms);
+
+
+
+	//		PUT THE CONNEXIONS
+       	t_room *tmp;
+	t_room *tmp2;
+	t_room *tmp3;
+
+	tmp = rooms;
+	while (rooms)
+	  {
+	    printf("== %s ==\n", rooms->name);
+	    tmp2 = *rooms->connex;
+	    while (*rooms->connex)
+	      {
+		printf("%s => ", (*rooms->connex)->name);
+
+
+	      	tmp3= *(*rooms->connex)->connex;
+		while (*(*rooms->connex)->connex)
+		  {
+		    printf("%s ", (*(*rooms->connex)->connex)->name);
+		    *(*rooms->connex)->connex = (*(*rooms->connex)->connex)->next;
+		  }
+		printf("\n");
+		*(*rooms->connex)->connex = tmp3;
+
+
+		*rooms->connex = (*rooms->connex)->next;
+	      }
+	    *rooms->connex = tmp2;
+	    printf("\n");
+	    rooms = rooms->next;
+	  }
+	rooms = tmp;
+
+	//	ft_solve(rooms, params->ant_nb);
 	return (0);
 }
 

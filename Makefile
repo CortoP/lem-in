@@ -10,7 +10,7 @@
 #                                                                              #
 #******************************************************************************#
 
-CC =		cc
+CC =		gcc
 
 FLAGS =		-Wall -Wextra -Werror
 
@@ -25,7 +25,6 @@ SRCS =		\
 			srcs/ft_get_tubes.c \
 			srcs/ft_init_lm.c \
 			srcs/ft_lemin_parser.c \
-			srcs/ft_solve.c \
 			srcs/ft_weighting.c \
 
 OBJS =		$(SRCS:.c=.o)
