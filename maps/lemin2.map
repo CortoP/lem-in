@@ -1,0 +1,13 @@
+10
+##start
+entree 1 0
+##end
+sortie 5 0
+premiere 9 0
+deuxieme 13 0
+troisieme 7 1
+entree-premiere
+deuxieme-entree
+troisieme-premiere
+sortie-deuxieme
+sortie-troisieme
