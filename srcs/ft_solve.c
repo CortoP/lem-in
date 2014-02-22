@@ -41,26 +41,6 @@ void			ft_ant_swap(t_room *room, t_room *connex)
 	}
 }
 
-t_room			*ft_move(t_room *room)
-{
-	t_room		*tmp;
-
-	tmp = *room->connex;
-	while (*room->connex)
-	{
-		if (*room->ant && room->flag != END
-			&& (*room->dist > *(*room->connex)->dist))
-		{
-			*room->connex = ft_move(*room->connex);
-			ft_ant_swap(room, *room->connex);
-			ft_putchar('\n');
-		}
-		*room->connex = (*room->connex)->next;
-	}
-	*room->connex = tmp;
-	return (room);
-}
-
 t_list			*ft_create_ant_list(int nb)
 {
 	t_list		*list;
@@ -114,10 +94,14 @@ void			ft_solve(t_room *rooms, int ants)
 
 	end = ft_get_end_ants(rooms);
 	start = ft_affect_first_ant(rooms, ants);
+	ft_test_way(start);
 	while (*end < ants)
 	{
 		if (*start->ant)
-			start = ft_move(start);
+		  {
+			start = ft_move_start(start);
+			ft_putchar('\n');
+		  }
 		else
 		{
 			tmp = rooms;

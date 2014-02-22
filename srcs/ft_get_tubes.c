@@ -20,8 +20,7 @@ int				ft_affect_id(char *tubes, t_room *rooms)
 			return (rooms->id);
 		rooms = rooms->next;
 	}
-	write(2, "Impossible to get connections\n", 30);
-	exit(-1);
+	ft_error();
 	return (-1);
 }
 

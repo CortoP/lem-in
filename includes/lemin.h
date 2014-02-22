@@ -57,4 +57,12 @@ typedef struct		s_lm
 # include <ft_solve.h>
 # include <ft_weighting.h>
 
+void			ft_ant_swap(t_room *room, t_room *connex);
+t_room			*ft_move(t_room *room);
+t_room			*ft_move_start(t_room *room);
+void			ft_error(void);
+int			ft_test_way(t_room *start);
+
+
+
 #endif /* !LEMIN_H */

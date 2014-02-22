@@ -27,39 +27,6 @@ int			main(void)
 
 
 
-/*		PUT THE CONNEXIONS
-       	t_room *tmp;
-	t_room *tmp2;
-	t_room *tmp3;
-
-	tmp = rooms;
-	while (rooms)
-	  {
-	    printf("== %s ==\n", rooms->name);
-	    tmp2 = *rooms->connex;
-	    while (*rooms->connex)
-	      {
-		printf("%s => ", (*rooms->connex)->name);
-
-
-	      	tmp3= *(*rooms->connex)->connex;
-		while (*(*rooms->connex)->connex)
-		  {
-		    printf("%s ", (*(*rooms->connex)->connex)->name);
-		    *(*rooms->connex)->connex = (*(*rooms->connex)->connex)->next;
-		  }
-		printf("\n");
-		*(*rooms->connex)->connex = tmp3;
-
-
-		*rooms->connex = (*rooms->connex)->next;
-	      }
-	    *rooms->connex = tmp2;
-	    printf("\n");
-	    rooms = rooms->next;
-	  }
-	rooms = tmp;
-*/
 	return (0);
 }
 
@@ -106,4 +73,38 @@ int			main(void)
 		printf("%s  => %d\n", rooms->name, *rooms->dist);
 		rooms = rooms->next;
 	}
+*/
+
+/*		PUT THE CONNEXIONS
+       	t_room *tmp;
+	t_room *tmp2;
+	t_room *tmp3;
+
+	tmp = rooms;
+	while (rooms)
+	  {
+	    printf("== %s ==\n", rooms->name);
+	    tmp2 = *rooms->connex;
+	    while (*rooms->connex)
+	      {
+		printf("%s => ", (*rooms->connex)->name);
+
+
+	      	tmp3= *(*rooms->connex)->connex;
+		while (*(*rooms->connex)->connex)
+		  {
+		    printf("%s ", (*(*rooms->connex)->connex)->name);
+		    *(*rooms->connex)->connex = (*(*rooms->connex)->connex)->next;
+		  }
+		printf("\n");
+		*(*rooms->connex)->connex = tmp3;
+
+
+		*rooms->connex = (*rooms->connex)->next;
+	      }
+	    *rooms->connex = tmp2;
+	    printf("\n");
+	    rooms = rooms->next;
+	  }
+	rooms = tmp;
 */

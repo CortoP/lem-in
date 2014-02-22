@@ -25,7 +25,8 @@ t_lm			*ft_parser(void)
 	params = ft_init_lm();
 	if (params)
 	{
-		params->ant_nb = ft_get_ant_nb();
+	  if ((params->ant_nb = ft_get_ant_nb()) == -1)
+	    ft_error();
 		params->rooms = ft_get_rooms(&first_tube);
 		params->tubes = ft_get_tubes(first_tube);
 		return (params);
@@ -40,37 +41,44 @@ static int		ft_get_ant_nb(void)
 
 	get_next_line(0, &str);
 	i = 0;
-	while (str[i])
-	{
+	if (str[i])
+	  {
+	    
+	    while (str[i])
+	      {
 		if (ft_isdigit(str[i]) == 0)
-			return (-1);
+		  return (-1);
 		i++;
-	}
-	return (ft_atoi(str));
+	      }
+	    return (ft_atoi(str));
+	  }
+	return (-1);
 }
 
 static t_list	*ft_get_rooms(char **first_tube)
 {
-	t_list		*rooms;
-	char		*str;
-
-	rooms = NULL;
-	while (get_next_line(0, &str) > 0)
+  t_list		*rooms;
+  char		*str;
+  
+  rooms = NULL;
+  while (get_next_line(0, &str) > 0)
+    {
+      if (!str[0])
+	ft_error();
+      if (ft_test_room(str) == 0)
 	{
-		if (ft_test_room(str) == 0)
-		{
-			if (!(rooms = ft_create_rooms(str, rooms)))
-				break ;
-		}
-		else
-			break ;
-	}
-	if (rooms && (*first_tube = ft_strdup(str)))
-	{
-		free(str);
-		return (rooms);
-	}
-	return (NULL);
+	  if (!(rooms = ft_create_rooms(str, rooms)))
+	    break ;
+	    }
+      else
+	break ;
+    }
+  if (rooms && (*first_tube = ft_strdup(str)))
+    {
+      free(str);
+      return (rooms);
+    }
+  return (NULL);
 }
 
 static t_list	*ft_get_tubes(char *first)
@@ -81,6 +89,8 @@ static t_list	*ft_get_tubes(char *first)
 	tubes = ft_lstnew((char *)first, ft_strlen(first));
 	while (get_next_line(0, &str) > 0)
 	{
+	  if (!str[0])
+	    ft_error();
 		if (ft_test_room(str) != 0)
 		{
 			if (!(tubes = ft_create_tubes(str, tubes)))
@@ -89,7 +99,7 @@ static t_list	*ft_get_tubes(char *first)
 		else if (str[0] == '#' && str[1] && str[1] != '#')
 			str[0] = str[1];
 		else
-			break ;
+		  ft_error();
 	}
 	return (tubes);
 }

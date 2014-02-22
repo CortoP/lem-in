@@ -20,13 +20,16 @@ SRCS =		\
 			srcs/lemin.c \
 			srcs/ft_add_connect.c \
 			srcs/ft_create_rooms.c \
+			srcs/ft_error.c \
 			srcs/ft_get_first_word.c \
 			srcs/ft_get_rooms_struct.c \
 			srcs/ft_get_tubes.c \
 			srcs/ft_init_lm.c \
 			srcs/ft_lemin_parser.c \
+			srcs/ft_move.c \
 			srcs/ft_solve.c \
 			srcs/ft_weighting.c \
+			srcs/ft_test_way.c \
 
 OBJS =		$(SRCS:.c=.o)
 
