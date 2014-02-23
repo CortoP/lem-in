@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 10:29:27 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/21 14:28:32 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:27:42 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct		s_lm
 	t_list			*rooms;
 	int				tube_nb;
 	t_list			*tubes;
+	t_list			**file;
 }					t_lm;
 
 # include <ft_add_connect.h>
@@ -62,7 +63,5 @@ t_room			*ft_move(t_room *room);
 t_room			*ft_move_start(t_room *room);
 void			ft_error(void);
 int			ft_test_way(t_room *start);
-
-
 
 #endif /* !LEMIN_H */
