@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 09:55:27 by vlehuger          #+#    #+#             */
-/*   Updated: 2013/11/25 12:16:19 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:39:48 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int			ft_atoi(const char *str)
@@ -19,7 +19,7 @@ int			ft_atoi(const char *str)
 	neg = 0;
 	nb = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r'\
-		   || str[i] == '\v' || str[i] == '\f')
+		|| str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '+')
 		i++;

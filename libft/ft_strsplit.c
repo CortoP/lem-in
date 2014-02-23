@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:11:00 by vlehuger          #+#    #+#             */
-/*   Updated: 2013/12/24 11:25:04 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:41:09 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -16,7 +16,7 @@ static int			ft_nb_str(const char *s, char c);
 static int			ft_strlen_c(const char *s, char c);
 
 
-char		**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		k;
@@ -42,7 +42,7 @@ char		**ft_strsplit(char const *s, char c)
 }
 
 
-static char		*ft_strmalloc(const char *s, char c)
+static char			*ft_strmalloc(const char *s, char c)
 {
 	char		*str;
 	int			i;
@@ -74,7 +74,7 @@ static int			ft_nb_str(const char *s, char c)
 	while (s[i] != '\0')
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
-			nb ++;
+			nb++;
 		i++;
 	}
 	return (nb);

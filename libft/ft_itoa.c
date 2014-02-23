@@ -6,7 +6,7 @@
 /*   By: veluger <vlehuger@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 18:35:07 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/01/22 15:48:26 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:40:26 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <libft.h>
@@ -24,7 +24,7 @@ static void		ft_itoa_fill(char *number, unsigned int n)
 	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	size_t	count;
 	char	*number;

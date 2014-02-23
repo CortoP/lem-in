@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/18 14:02:37 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/21 14:04:05 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:50:34 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void			ft_room_weighting(t_room *room, int dist)
 		if (*(*room->connex)->dist > dist || *(*room->connex)->dist == -1)
 		{
 			*(*room->connex)->dist = dist + 1;
-			ft_room_weighting(*room->connex, dist + 1);;
+			ft_room_weighting(*room->connex, dist + 1);
 		}
 		*room->connex = (*room->connex)->next;
 	}

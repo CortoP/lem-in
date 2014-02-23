@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 10:33:52 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/23 12:15:04 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:54:48 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int		ft_get_ant_nb(t_list **file);
 static t_list	*ft_get_rooms(char **first_tube, t_list **file);
-static t_list   *ft_get_tubes(char *first, t_list **file);
-static t_list   *ft_create_tubes(char *str, t_list *tubes);
+static t_list	*ft_get_tubes(char *first, t_list **file);
+static t_list	*ft_create_tubes(char *str, t_list *tubes);
 
 t_lm			*ft_parser(void)
 {
@@ -25,10 +25,10 @@ t_lm			*ft_parser(void)
 	params = ft_init_lm();
 	if (params)
 	{
-	  if ((params->ant_nb = ft_get_ant_nb(params->file)) == -1)
-	    ft_error();
-	  params->rooms = ft_get_rooms(&first_tube, params->file);
-	  params->tubes = ft_get_tubes(first_tube, params->file);
+		if ((params->ant_nb = ft_get_ant_nb(params->file)) == -1)
+			ft_error();
+		params->rooms = ft_get_rooms(&first_tube, params->file);
+		params->tubes = ft_get_tubes(first_tube, params->file);
 		return (params);
 	}
 	return (NULL);
@@ -43,16 +43,15 @@ static int		ft_get_ant_nb(t_list **file)
 	*file = ft_lstnew(str, 0);
 	i = 0;
 	if (str[i])
-	  {
-	    
-	    while (str[i])
-	      {
-		if (ft_isdigit(str[i]) == 0)
-		  return (-1);
-		i++;
-	      }
-	    return (ft_atoi(str));
-	  }
+	{
+		while (str[i])
+		{
+			if (ft_isdigit(str[i]) == 0)
+				return (-1);
+			i++;
+		}
+		return (ft_atoi(str));
+	}
 	return (-1);
 }
 
@@ -63,7 +62,7 @@ static t_list	*ft_get_rooms(char **first_tube, t_list **file)
 
 	rooms = NULL;
 	while (get_next_line(0, &str) > 0)
-    {
+	{
 		*file = ft_lst_push_back(*file, ft_lstnew(str, 0));
 		if (!str[0])
 			ft_error();
@@ -71,16 +70,16 @@ static t_list	*ft_get_rooms(char **first_tube, t_list **file)
 		{
 			if (!(rooms = ft_create_rooms(str, rooms)))
 				break ;
-	    }
+		}
 		else
-	break ;
-    }
+			break ;
+	}
 	if (rooms && (*first_tube = ft_strdup(str)))
-    {
+	{
 		free(str);
 		return (rooms);
-    }
-  return (NULL);
+	}
+	return (NULL);
 }
 
 static t_list	*ft_get_tubes(char *first, t_list **file)

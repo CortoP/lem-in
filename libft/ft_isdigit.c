@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 17:22:46 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/01/11 16:12:30 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:40:07 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_isdigit(int c)
 		return (0);
 }
 
-int		ft_nb_int(char  *line)
+int		ft_nb_int(char *line)
 {
 	int	i;
 	int	nb;

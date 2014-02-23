@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/18 14:53:10 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/21 15:48:25 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:46:18 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ t_list			*ft_create_ant_list(int nb)
 			list = ft_lstnew(ft_strjoin("L", ft_itoa(nb)), nb);
 		else
 			list = ft_lst_push_back(list,
-									ft_lstnew(ft_strjoin("L", ft_itoa(nb)), nb));
+									ft_lstnew(ft_strjoin("L",
+														 ft_itoa(nb)), nb));
 		nb--;
 	}
 	return (list);
@@ -98,10 +99,10 @@ void			ft_solve(t_room *rooms, int ants)
 	while (*end < ants)
 	{
 		if (*start->ant)
-		  {
+		{
 			start = ft_move_start(start);
 			ft_putchar('\n');
-		  }
+		}
 		else
 		{
 			tmp = rooms;

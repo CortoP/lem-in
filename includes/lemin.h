@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/04 10:29:27 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/23 12:27:42 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/02/23 12:39:24 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ void			ft_ant_swap(t_room *room, t_room *connex);
 t_room			*ft_move(t_room *room);
 t_room			*ft_move_start(t_room *room);
 void			ft_error(void);
-int			ft_test_way(t_room *start);
+int				ft_test_way(t_room *start);
 
 #endif /* !LEMIN_H */
