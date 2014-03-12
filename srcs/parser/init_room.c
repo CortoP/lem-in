@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 15:29:43 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/12 15:33:23 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/12 17:07:27 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ t_room			*init_room(void)
 	room = (t_room *)malloc(sizeof(t_room));
 	if (room)
 	{
-		id = -1;
-		str = NULL;
-		X = 0;
-		Y = 0;
-		link = NULL;
-		next = NULL;
+		room->id = -1;
+		room->str = NULL;
+		room->cmd = -1;
+		room->X = 0;
+		room->Y = 0;
+		room->link = NULL;
+		room->next = NULL;
 		return (room);
 	}
 	return (NULL);

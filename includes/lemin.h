@@ -6,15 +6,17 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 12:08:52 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/12 15:26:10 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/12 18:45:02 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEMIN_H
 # define LEMIN_H
 
-# define coord[0] X
-# define coord[1] Y
+# define X coord[0]
+# define Y coord[1]
+# define START 1
+# define FINISH 2
 
 typedef	enum	e_state
 {
@@ -24,26 +26,39 @@ typedef	enum	e_state
 	END
 }				t_state;
 
-struct			s_room
+typedef struct	s_link
 {
-	int			id;
-	char		*str;
-	int			coord[2];
-	s_room		*link;
-	s_room		*next;
-}				t_room;
+	struct s_room	*link_room;
+	struct s_link	*next;
+}				t_link;
+
+typedef struct	s_room
+{
+	int				id;
+	char			*str;
+	char			cmd;
+	int				coord[2];
+	struct s_link	*link;
+	struct s_room	*next;
+}					t_room;
 
 typedef struct	s_lem
 {
 	int			ant;
+	t_room		*room;
 }				t_lem;
 
 void		parser(t_lem *p);
 t_state		get_ant(t_lem *p, char *str);
 t_state		get_room(t_lem *p, char *str);
+t_state		get_link(t_lem *p, char *str);
 
+t_room		*init_room(void);
+void		fill_room(t_lem *p, char *str);
+void		fill_link(t_lem *p, char *str);
 char		is_room(char *str);
 char		is_command(char *str);
+char		is_link(char *str);
 
 void		error(void);
 

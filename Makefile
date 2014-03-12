@@ -6,7 +6,7 @@
 #    By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/01/14 14:36:46 by vlehuger          #+#    #+#              #
-#    Updated: 2014/03/12 15:33:16 by vlehuger         ###   ########.fr        #
+#    Updated: 2014/03/12 18:45:21 by vlehuger         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,7 +24,11 @@ SRCS =		\
 			srcs/parser/get_room.c \
 			srcs/parser/is_room.c \
 			srcs/parser/is_command.c\
-			srcs/parser/init_room.c
+			srcs/parser/init_room.c\
+			srcs/parser/fill_room.c\
+			srcs/parser/get_link.c\
+			srcs/parser/is_link.c\
+			srcs/parser/fill_link.c\
 
 OBJS =		$(SRCS:.c=.o)
 
