@@ -18,6 +18,8 @@
 # define START 1
 # define FINISH 2
 
+# include <libft.h>
+
 typedef	enum	e_state
 {
 	ANT,
@@ -45,6 +47,7 @@ typedef struct	s_room
 typedef struct	s_lem
 {
 	int			ant;
+  t_list		*file;
 	t_room		*room;
 }				t_lem;
 
@@ -61,5 +64,6 @@ char		is_command(char *str);
 char		is_link(char *str);
 
 void		error(void);
+void		display_file(t_list *file);
 
 #endif /* !LEMIN_H */

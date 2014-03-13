@@ -13,11 +13,25 @@
 #include <lemin.h>
 #include <libft.h>
 
-static void	fill_tmp(t_room *room, int id, char *str)
-{
-	char		**split;
 
-	split = ft_strsplit(str, ' ');
+static void		test_room(t_lem *p, char **tab)
+{
+  t_room	*tmp;
+  
+  tmp = p->room;
+  while (p->room)
+    {
+      if ((p->room->str && ft_strcmp(tab[0], p->room->str) == 0)
+	  || (ft_atoi(tab[1]) == p->room->X && ft_atoi(tab[2]) == p->room->Y))
+	error();
+      p->room = p->room->next;
+    }
+  p->room = tmp;
+}
+
+
+static void	fill_tmp(t_room *room, int id, char **split)
+{
 	room->id = id;
 	room->str = ft_strdup(split[0]);
 	free(split[0]);
@@ -32,10 +46,13 @@ void		fill_room(t_lem *p, char *str)
 {
 	t_room		*room;
 	static int	id = 0;
+	char		**split;
 
+	split = ft_strsplit(str, ' ');
+      	test_room(p, split);
 	if (!(room = init_room()))
 		error();
-	fill_tmp(room, id, str);
+	fill_tmp(room, id, split);
 	if (p->room == NULL)
 		p->room = room;
 	else if (p->room->cmd != -1 && p->room->str == NULL)

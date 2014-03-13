@@ -18,7 +18,9 @@ int			main(void)
 	t_lem	param;
 
 	param.room = NULL;
+	param.file = NULL;
 	parser(&param);
+	display_file(param.file);
 //	lemin();
 	return (0);
 }

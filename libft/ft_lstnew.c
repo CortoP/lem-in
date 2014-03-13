@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include <libft.h>
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+t_list		*ft_lstnew(char const *content, int content_size)
 {
 	t_list	*new_el;
 
@@ -20,7 +20,7 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 	{
 		if (content != NULL)
 		{
-			new_el->content = (void *)content;
+			new_el->content = ft_strdup(content);
 			new_el->content_size = content_size;
 			new_el->next = NULL;
 		}

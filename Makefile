@@ -19,6 +19,7 @@ NAME =		lemin
 SRCS =		\
 			srcs/main.c \
 			srcs/error.c \
+			srcs/display.c \
 			srcs/parser/parser.c \
 			srcs/parser/get_ant.c \
 			srcs/parser/get_room.c \

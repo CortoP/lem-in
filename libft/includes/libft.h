@@ -28,8 +28,8 @@ typedef struct	s_coord
 
 typedef struct		s_list
 {
-	void			*content;
-	size_t			content_size;
+	char			*content;
+	int			content_size;
 	struct s_list	*next;
 }					t_list;
 
@@ -54,7 +54,7 @@ int			ft_isprint(int c);
 char		*ft_itoa(int n);
 size_t		ft_itoa_ccount(unsigned long int n);
 void		ft_lstadd(t_list **alst, t_list *new);
-t_list		*ft_lstnew(void const *conent, size_t content_size);
+t_list		*ft_lstnew(char const *content, int content_size);
 void		*ft_memcpy(void *s1, const void *s2, size_t n);
 void		ft_memdel(void **ap);
 int			ft_nb_int(char *line);
