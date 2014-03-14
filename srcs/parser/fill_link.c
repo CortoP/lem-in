@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 18:11:11 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/12 19:16:14 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/14 15:14:57 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ static void		create_link(t_room *room, char **split)
 			{
 				if (ft_strcmp(tmp[1]->str, split[1]) == 0)
 				{
-					links(tmp[0], tmp[1]);
-					links(tmp[1], tmp[0]);
+					links(room, tmp[1]);
+					links(tmp[1], room);
 					break ;
 				}
 				tmp[1] = tmp[1]->next;

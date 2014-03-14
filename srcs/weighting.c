@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 11:19:08 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/14 14:49:29 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/14 15:16:43 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 static void		ft_weighting(t_room *room, int weight)
 {
 	t_link		*tmp;
-
-	if (ft_strcmp(room->str, "2") == 0)
-		ft_putendl(room->link->link_room->str);
 
 	if (room->weight == -1 || room->weight > weight)
 	{
