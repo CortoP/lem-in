@@ -6,7 +6,7 @@
 #    By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/01/14 14:36:46 by vlehuger          #+#    #+#              #
-#    Updated: 2014/03/12 18:45:21 by vlehuger         ###   ########.fr        #
+#    Updated: 2014/03/14 11:39:36 by vlehuger         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,6 +20,7 @@ SRCS =		\
 			srcs/main.c \
 			srcs/error.c \
 			srcs/display.c \
+			srcs/weighting.c \
 			srcs/parser/parser.c \
 			srcs/parser/get_ant.c \
 			srcs/parser/get_room.c \
@@ -30,6 +31,7 @@ SRCS =		\
 			srcs/parser/get_link.c\
 			srcs/parser/is_link.c\
 			srcs/parser/fill_link.c\
+
 
 OBJS =		$(SRCS:.c=.o)
 

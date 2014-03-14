@@ -6,7 +6,7 @@
 #    By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/06 17:01:45 by vlehuger          #+#    #+#              #
-#    Updated: 2014/02/25 11:46:49 by vlehuger         ###   ########.fr        #
+#    Updated: 2014/03/14 11:57:22 by vlehuger         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,6 +20,7 @@ NAME = libft.a
 SRCS = \
 		ft_atod.c \
 		ft_atoi.c \
+		ft_bzero.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -31,6 +32,7 @@ SRCS = \
 		ft_lstnew.c \
 		ft_memcpy.c \
 		ft_memdel.c \
+		ft_memset.c \
 		ft_put_pixel_to_image.c \
 		ft_putarray.c \
 		ft_putarray_fd.c \
