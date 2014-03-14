@@ -6,7 +6,7 @@
 #    By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/01/14 14:36:46 by vlehuger          #+#    #+#              #
-#    Updated: 2014/03/14 11:39:36 by vlehuger         ###   ########.fr        #
+#    Updated: 2014/03/14 16:18:25 by vlehuger         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -21,6 +21,8 @@ SRCS =		\
 			srcs/error.c \
 			srcs/display.c \
 			srcs/weighting.c \
+			srcs/init_ant.c \
+			srcs/lemin.c \
 			srcs/parser/parser.c \
 			srcs/parser/get_ant.c \
 			srcs/parser/get_room.c \

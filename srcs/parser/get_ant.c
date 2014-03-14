@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 13:59:58 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/12 15:17:40 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/14 15:46:22 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_state			get_ant(t_lem *p, char *str)
 		i++;
 	}
 	p->ant = ft_atoi(str);
-//	ft_putnbr(p->ant);
-//	ft_putchar('\n');
+	if (p->ant <= 0)
+		error();
 	return (ROOM);
 }

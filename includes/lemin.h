@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 12:08:52 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/14 11:37:03 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/14 16:21:15 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,28 @@ typedef struct	s_room
 	int				id;
 	char			*str;
 	char			cmd;
+	int				ant;
 	int				coord[2];
 	int				weight;
 	struct s_link	*link;
 	struct s_room	*next;
 }					t_room;
 
+typedef struct	s_ant
+{
+	char			*name;
+	t_room			*room;
+	struct s_ant	*next;
+}				t_ant;
+
 typedef struct	s_lem
 {
 	int			ant;
+	t_ant		*ants;
 	t_list		*file;
 	t_room		*room;
+	t_room		*first;
+	t_room		*end;
 }				t_lem;
 
 void		parser(t_lem *p);
@@ -67,6 +78,7 @@ char		is_link(char *str);
 void		error(void);
 void		display_file(t_list *file);
 void		weighting(t_lem *p);
-
+void		init_ant(t_lem *p);
+void		lemin(t_lem *p);
 
 #endif /* !LEMIN_H */

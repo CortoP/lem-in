@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 15:29:43 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/14 11:40:51 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/14 15:26:26 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_room			*init_room(void)
 	if (room)
 	{
 		room->id = -1;
+		room->ant = 0;
 		room->str = NULL;
 		room->cmd = -1;
 		room->X = 0;
