@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/12 11:46:16 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/14 16:24:29 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/15 13:17:36 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int			main(void)
 	init_ant(&param);
 	display_file(param.file);
 	ft_putchar('\n');
-//	ft_putnbr(param.ants->room->link->link_room->ant);
-//	ft_putchar('\n');
 	lemin(&param);
 	return (0);
 }
