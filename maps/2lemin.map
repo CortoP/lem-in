@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 13
 ##start
 start 1 0
@@ -15,3 +16,20 @@ esgfasg
 dsvgszg
 12424
 fsf432
+=======
+10
+##start
+start 0 0
+##end
+end 10 10
+premiere 5 6
+premierebis 6 5
+deuxieme 10 9
+deuxiemebis 9 10
+start-premiere
+start-premierebis
+premiere-deuxiemebis
+premierebis-deuxieme
+deuxieme-end
+deuxiemebis-end
+>>>>>>> c8da24de8dc66a9a812749f497f26bbc3e8e8643

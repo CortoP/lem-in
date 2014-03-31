@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 11:19:08 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/14 16:17:20 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/15 13:19:21 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static t_room	*find_room(t_room *room, char cmd)
 void			weighting(t_lem *p)
 {
 	p->end = find_room(p->room, FINISH);
-	//en recursive affecter une ponderation aux salles 
 	ft_weighting(p->end, 0);
 	p->first = find_room(p->room, START);
 	if (p->first->weight == -1)

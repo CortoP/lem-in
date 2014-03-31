@@ -6,7 +6,7 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 11:41:08 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/02/25 12:01:32 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/15 13:14:29 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int				ft_ten_pow(int ten, int p)
 double			ft_atod(const char *s)
 {
 	int			i;
-	double		integer;
-	double		float_;
+	double		intger;
+	double		flot_;
+
 	i = 0;
 	while (s[i] && s[i] != '.')
 		i++;
@@ -32,10 +33,10 @@ double			ft_atod(const char *s)
 		return ((double)(ft_atoi(s)));
 	else if (s[i] == '.')
 	{
-		integer = (double)ft_atoi(ft_strsub(s, 0, i));
-		float_ = (double)ft_atoi(ft_strsub(s, i + 1, ft_strlen(s) - i - 1));
-		float_ = float_ / ft_ten_pow(1, ft_strlen(s) - i - 1);
-		float_ = float_ + integer;
+		intger = (double)ft_atoi(ft_strsub(s, 0, i));
+		flot_ = (double)ft_atoi(ft_strsub(s, i + 1, ft_strlen(s) - i - 1));
+		flot_ = flot_ / ft_ten_pow(1, ft_strlen(s) - i - 1);
+		flot_ = flot_ + intger;
 	}
-	return (float_);
+	return (flot_);
 }
