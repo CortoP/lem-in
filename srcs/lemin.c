@@ -6,37 +6,56 @@
 /*   By: vlehuger <vlehuger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/14 15:23:11 by vlehuger          #+#    #+#             */
-/*   Updated: 2014/03/14 16:44:23 by vlehuger         ###   ########.fr       */
+/*   Updated: 2014/03/17 11:19:49 by vlehuger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <lemin.h>
+#include <stdio.h>
+
+char			is_moovable(t_ant *ant);
+
+char			is_spaceable(t_ant *ant)
+{
+	t_ant		*save;
+	int			ret;
+
+	ret = 0;
+	save = ant;
+	while (ant)
+	{
+		if (is_moovable(ant) == 1)
+		{
+			ret = 1;
+			break ;
+		}
+		ant = ant->next;
+	}
+	ant = save;
+	return (ret);
+}
 
 void			go_ant(t_ant *ant)
 {
 	t_room		*saver;
 	t_link		*savel;
-	char		flag;
 
-	flag = 0;
 	saver = ant->room;
 	savel = saver->link;
 	while (saver->link)
 	{
-		if (saver->link->link_room->weight < saver->weight)
+		if (saver->link->link_room->weight < saver->weight && saver->link->link_room->ant == 0)
 		{
 			saver->ant = saver->ant - 1;
 			saver->link->link_room->ant = saver->link->link_room->ant + 1;
-			if (ant->room->cmd == START && ant->room->ant == 0)
-				flag = 1;
 			ant->room = saver->link->link_room;
 			ft_putstr(ant->name);
 			ft_putchar('-');
 			ft_putstr(ant->room->str);
-			ft_putchar(' ');
-			if (flag == 1)
-				ft_putchar('\n');
+//			if ((ant->next && is_moovable(ant->next) == 1) || (ant->next && ant->next->next && is_moovable(ant->next->next) == 1))
+			if (ant->next && is_spaceable(ant->next) == 1)
+				ft_putchar(' ');
 			break ;
 		}
 		saver->link = saver->link->next;
@@ -68,28 +87,36 @@ char			is_moovable(t_ant *ant)
 void			lemin(t_lem *p)
 {
 	t_ant		*save;
+//	t_room		*saveroom;/////////////////////////
 
 	while (p->ant > 0)
 	{
 		save = p->ants;
 		while (p->ants)
 		{
-			if (is_moovable(p->ants) == 0)	//test si la fourmi peut bouger
+/*
+			saveroom = p->room;
+			while (p->room)
 			{
-				ft_putchar('\n');
-				break ;
+				printf("%s ==> %s -> %d\n", p->ants->name, p->room->str, p->room->ant);
+				p->room = p->room->next;
 			}
-			go_ant(p->ants); //fait bouger la fourmi et les compteurs des 2 salles
-			if (p->ants->room == p->end)
+			p->room = saveroom;
+*/
+			if (is_moovable(p->ants) == 1)	//test si la fourmi peut bouger
 			{
-				free(p->ants->name);
-				save = save->next;
-				p->end->ant -= 1;
-				p->ant -= 1;
+				go_ant(p->ants); //fait bouger la fourmi et les compteurs des 2 salles
+				if (p->ants->room == p->end)
+				{
+					free(p->ants->name);
+					save = save->next;
+					p->end->ant -= 1;
+					p->ant -= 1;
+				}
 			}
 			p->ants = p->ants->next;
 		}
+		ft_putchar('\n');
 		p->ants = save;
 	}
-	ft_putchar('\n');
 }
